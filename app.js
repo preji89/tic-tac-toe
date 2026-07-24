@@ -61,7 +61,7 @@ cells.forEach((cell, index) => {
     });
 });
 
-document.getElementById("reset").addEventListener("click", resetBoard);
+document.getElementById("resetButton").addEventListener("click", resetBoard);
 
 module.exports = {
   board,

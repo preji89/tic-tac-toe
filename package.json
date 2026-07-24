@@ -1,0 +1,28 @@
+{
+  "name": "tic-tac-toe",
+  "version": "1.0.0",
+  "description": "A simple browser-based Tic Tac Toe game built with plain HTML, CSS, and JavaScript.",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "testEnvironment": "jsdom"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/preji89/tic-tac-toe.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/preji89/tic-tac-toe/issues"
+  },
+  "homepage": "https://github.com/preji89/tic-tac-toe#readme",
+  "devDependencies": {
+    "jest": "^30.4.2",
+    "jest-environment-jsdom": "^30.4.1"
+  }
+}
