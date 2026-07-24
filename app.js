@@ -32,7 +32,7 @@ function resetBoard() {
     cell.disabled = false;
     cell.textContent = "";   
   });
-  document.getElementById("status").textContent = "PlayerX's turn";
+  document.getElementById("status").textContent = "Player X's turn";
 }
 
 function disableBoard() {
@@ -48,6 +48,7 @@ cells.forEach((cell, index) => {
         cell.textContent = currentPlayer;
         cell.disabled = true;
         if (checkWin(currentPlayer)) {
+            confetti();
             statusText.textContent = `${currentPlayer} wins!`;
             disableBoard();
             return;

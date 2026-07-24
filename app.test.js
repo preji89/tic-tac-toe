@@ -19,6 +19,7 @@ function setupDom() {
 function loadApp() {
   jest.resetModules();
   setupDom();
+  global.confetti = jest.fn();
   return require("./app.js");
 }
 
@@ -110,6 +111,7 @@ describe("cell click handling", () => {
     cells()[2].click(); // X completes the top row
 
     expect(statusText().textContent).toBe("X wins!");
+    expect(global.confetti).toHaveBeenCalled();
     cells().forEach((cell) => expect(cell.disabled).toBe(true));
   });
 
