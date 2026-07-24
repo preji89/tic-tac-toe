@@ -49,7 +49,7 @@ cells.forEach((cell, index) => {
         cell.disabled = true;
         if (checkWin(currentPlayer)) {
             confetti();
-            statusText.textContent = `${currentPlayer} wins!`;
+            statusText.textContent = `Player ${currentPlayer} wins!`;
             disableBoard();
             return;
         }

@@ -110,7 +110,7 @@ describe("cell click handling", () => {
     cells()[4].click(); // O
     cells()[2].click(); // X completes the top row
 
-    expect(statusText().textContent).toBe("X wins!");
+    expect(statusText().textContent).toBe("Player X wins!");
     expect(global.confetti).toHaveBeenCalled();
     cells().forEach((cell) => expect(cell.disabled).toBe(true));
   });
@@ -125,6 +125,14 @@ describe("cell click handling", () => {
 
     expect(app.isBoardFull()).toBe(true);
     expect(statusText().textContent).toBe("It's a draw!");
+  });
+
+  test("ignores clicks on already filled cells", () => {
+    cells()[0].click(); // X plays
+    cells()[0].click(); // clicking same cell again
+
+    expect(app.board[0]).toBe("X"); // still X, not overwritten
+    expect(statusText().textContent).toBe("Player O's turn"); // still O's turn
   });
 });
 
